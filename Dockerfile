@@ -25,8 +25,8 @@ COPY recommend_scrapping_tool.py /app/recommend_scrapping_tool.py
 # Set the working directory
 WORKDIR /app
 
-# Install required Python packages
-RUN pip3 install --no-cache-dir requests beautifulsoup4 selenium
+# Install required Python packages with override flag.
+RUN pip3 install --break-system-packages --no-cache-dir requests beautifulsoup4 selenium
 
 # (Optional) Set the DISPLAY variable if needed (for headless operation, this is usually not required)
 ENV DISPLAY=:99
