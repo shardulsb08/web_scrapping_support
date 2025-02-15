@@ -21,6 +21,7 @@ RUN ln -s /usr/bin/python3 /usr/bin/python
 # Copy your scraping script into the container.
 # Ensure your file is named 'recommend_scrapping_tool.py' and located in the same directory as this Dockerfile.
 COPY recommend_scrapping_tool.py /app/recommend_scrapping_tool.py
+COPY selenium_utils.py /app/selenium_utils.py
 
 # Set the working directory
 WORKDIR /app
