@@ -13,6 +13,10 @@ RUN apt-get update && apt-get install -y \
     wget \
     curl \
     gnupg \
+    libnss3 \
+    libxss1 \
+    libappindicator3-1 \
+    fonts-liberation \
     && rm -rf /var/lib/apt/lists/*
 
 # (Optional) Create a symlink so that 'python' points to 'python3'
