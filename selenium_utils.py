@@ -2,6 +2,7 @@
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 
@@ -20,7 +21,10 @@ def fetch_rendered_html(url, wait_time=5):
     
     driver = None
     try:
-        driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+        # Create a Service object using the driver path provided by ChromeDriverManager.
+        service = Service(ChromeDriverManager().install())
+        # Pass the service and options to webdriver.Chrome.
+        driver = webdriver.Chrome(service=service, options=options)
         driver.get(url)
         # Wait for the page to render.
         time.sleep(wait_time)
