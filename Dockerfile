@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y \
     fonts-liberation \
     libgtk-3-0 \
     libgbm1 \
-    libasound2 \
+    libasound2t64 \
     && rm -rf /var/lib/apt/lists/*
 
 # (Optional) Create a symlink so that 'python' points to 'python3'
