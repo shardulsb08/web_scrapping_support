@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup
 from urllib.robotparser import RobotFileParser
 from urllib.parse import urlparse
 import time
-import sys
 
 # For Selenium (ensure you have Selenium and a browser driver installed)
 from selenium import webdriver
@@ -175,10 +174,5 @@ def analyze_page(url):
             print(f"\nX-Robots-Tag header found: {x_robots}")
 
 if __name__ == '__main__':
-    # Check if a URL was provided as a command-line argument
-    if len(sys.argv) > 1:
-        url = sys.argv[1].strip()
-    else:
-        url = input("Enter the URL to analyze: ").strip()
-
+    url = input("Enter the URL to analyze: ").strip()
     analyze_page(url)
