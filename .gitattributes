@@ -29,7 +29,7 @@
 *.tar.gz  binary
 
 # Ignore trailing whitespace on diff
-* -diff
+#* -diff
 
 # Handle Windows Batch files and PowerShell scripts correctly
 *.bat     text eol=crlf
