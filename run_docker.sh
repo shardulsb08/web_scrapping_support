@@ -4,4 +4,4 @@
 docker build -t scrapping_tool .
 
 # Run the container and remove it after exit
-docker run --rm scrapping_tool
+docker run -it --rm scrapping_tool
