@@ -24,6 +24,7 @@ def fetch_rendered_html(url, wait_time=5):
     # Use the chromedriver installed by the system package.
     service = Service(executable_path="/usr/bin/chromedriver")
 
+    driver = None
     try:
         driver = webdriver.Chrome(service=service, options=options)
         driver.get(url)
@@ -35,7 +36,8 @@ def fetch_rendered_html(url, wait_time=5):
         print(f"Error fetching rendered HTML with Selenium: {e}", flush=True)
         return None
     finally:
-        try:
-            driver.quit()
-        except Exception:
-            pass
+        if driver:
+            try:
+                driver.quit()
+            except Exception:
+                pass
