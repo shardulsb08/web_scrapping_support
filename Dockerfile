@@ -17,6 +17,9 @@ RUN apt-get update && apt-get install -y \
     libxss1 \
     libappindicator3-1 \
     fonts-liberation \
+    libgtk-3-0 \
+    libgbm1 \
+    libasound2 \
     && rm -rf /var/lib/apt/lists/*
 
 # (Optional) Create a symlink so that 'python' points to 'python3'
@@ -32,6 +35,8 @@ WORKDIR /app
 
 # Install required Python packages with override flag.
 RUN pip3 install --break-system-packages --no-cache-dir requests beautifulsoup4 selenium
+
+RUN chromium-browser --version && chromedriver --version
 
 # (Optional) Set the DISPLAY variable if needed (for headless operation, this is usually not required)
 ENV DISPLAY=:99

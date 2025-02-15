@@ -1,3 +1,5 @@
+# selenium_utils.py
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
@@ -12,6 +14,9 @@ def fetch_rendered_html(url, wait_time=5):
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument('--disable-gpu')
+    options.add_argument('--disable-setuid-sandbox')
+    options.add_argument('--disable-extensions')
+    options.add_argument('--disable-software-rasterizer')
     options.add_argument('--remote-debugging-port=9222')
     
     # Use the chromedriver installed by the system package.
